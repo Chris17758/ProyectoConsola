@@ -21,6 +21,12 @@ public class Login {
         if (sysUsuario.equals(Usuario)) {
             if (sysContrasena.equals(Contrasena)) {
             System.out.println("Inicio de sesion exitoso\n");
+            
+            Main main = new Main();
+        
+            main.Menu();
+            
+            
         } else{
             System.out.println("Contrasena invalida");
             }

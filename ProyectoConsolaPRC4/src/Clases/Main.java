@@ -12,6 +12,7 @@ public class Main {
     Scanner leer = new Scanner(System.in);
     int opcion;
     
+    if (login.verificador == true){
     System.out.println("Menu de Opciones");
     System.out.println("1. Venta nueva");
     System.out.println("2.Consultar inventarios");
@@ -19,6 +20,7 @@ public class Main {
     System.out.println("4.Salir del sistema");
     
     opcion=leer.nextInt();
+    }
 }
     }
     

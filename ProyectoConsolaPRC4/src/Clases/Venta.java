@@ -6,6 +6,7 @@
 package Clases;
 
 import java.util.Scanner;
+import java.io.*;
 
 /**
  *
@@ -13,37 +14,43 @@ import java.util.Scanner;
  */
 public class Venta {
     
-    public static void main(String[] args){
-        
+
+    public static void main(String[] args) {
+
         Catalogo catalogo = new Catalogo();
-        String[] productos = catalogo.Catalogo();
+        catalogo.Catalogo();
+        String[] productos = catalogo.Productos();
 
         Scanner teclado = new Scanner(System.in);
         String codigo = "";
         String cantidad = "";
-        
-        
+
+        FileWriter fichero = null;
+        PrintWriter pw = null;
+
         System.out.print("Ingrese el codigo de producto :");
         codigo = teclado.nextLine();
 
-        System.out.print("Digite la cantidad  :");
-        cantidad = teclado.nextLine();
-
+        ///System.out.print("Digite la cantidad  :");
+        ///cantidad = teclado.nextLine();
         for (int j = 0; j < productos.length; j++) {
             if (productos[j].equals(codigo)) {
-                
-                System.out.println("productos[j]");
-            }
-            else{
+                System.out.println("Digita la cantidad :");
+                cantidad = teclado.nextLine();
+
+                if (productos[j].equals(cantidad)) {
+
+                }
+
+            } else {
                 System.out.println("El Producto seleccionado no esta disponible ");
             }
-            if (productos[j].equals(cantidad)) {
-                
-            }
         } 
-    }
-    
-    
+        
+        
+        
 
     
+}
+
 }

@@ -28,7 +28,7 @@ public class Venta {
         FileWriter fichero = null;
         PrintWriter pw = null;
 
-        System.out.print("Ingrese el codigo de producto :");
+        System.out.print("Ingrese su venta :");
         codigo = teclado.nextLine();
 
         ///System.out.print("Digite la cantidad  :");

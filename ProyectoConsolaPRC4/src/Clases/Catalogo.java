@@ -172,6 +172,7 @@ public class Catalogo {
         }
     }
 
+    ///Catalogo utlizando archivos
     public String[] Productos() {
 
         File archivo = null;

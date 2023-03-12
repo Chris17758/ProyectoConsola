@@ -19,7 +19,7 @@ public class Catalogo {
     private String[] PrecioProductos;
     private int[] CantidadProductos;
     private int[] CodProductos;
-   
+
     /*
     public void VentaconArreglo() {
         Catalogo catalogo = new Catalogo();
@@ -38,7 +38,7 @@ public class Catalogo {
         /*La venta se tiene que introducir de una sola vez, en una sola cadena separada por coma ejemplo:
         código producto, cantidad - > ejemplo compra: producto1, producto2, producto3 -> 1,2,2,6,3,2, si
         así lleva 2 producto1, 6 producto2 y 2 producto3. */
-      /*  for (int j = 0; j < productos.length; j++) {
+ /*  for (int j = 0; j < productos.length; j++) {
             if (productos[j].equals(venta)) {
                 System.out.println("Digita la cantidad :");
                 cantidad = teclado.nextInt();
@@ -57,7 +57,6 @@ public class Catalogo {
           
 
     }  */
-
     ///Aca se inicializan los arreglos de productos y precios y precios
     public void Inicializar() {
 
@@ -65,19 +64,18 @@ public class Catalogo {
         NomProductos = new String[10];
         PrecioProductos = new String[10];
         CantidadProductos = new int[10];
-        
-        CodProductos[0]= 1;
-        CodProductos[1]= 2;   
-        CodProductos[2]= 3;
-        CodProductos[3]= 4;
-        CodProductos[4]= 5;
-        CodProductos[5]= 6;
-        CodProductos[6]= 7;
-        CodProductos[7]= 8;
-        CodProductos[8]= 9;
-        CodProductos[9]= 10;
 
-       
+        CodProductos[0] = 1;
+        CodProductos[1] = 2;
+        CodProductos[2] = 3;
+        CodProductos[3] = 4;
+        CodProductos[4] = 5;
+        CodProductos[5] = 6;
+        CodProductos[6] = 7;
+        CodProductos[7] = 8;
+        CodProductos[8] = 9;
+        CodProductos[9] = 10;
+
         NomProductos[0] = "1. Monitor 4k";
         NomProductos[1] = "2. Laptop I51035G1 8gb ram";
         NomProductos[2] = "3. Silla Gamer RG7";
@@ -185,7 +183,7 @@ public class Catalogo {
         String Cantidad = "";
 
         try {
-            productos = new String[15];
+            productos = new String[2];
             String path = System.getProperty("user.dir");
             path = path + "\\Archivos\\Catalogo\\Ventas.txt";
 
@@ -208,7 +206,7 @@ public class Catalogo {
 
             while ((linea = br.readLine()) != null) {
 
-                lineatmp = lineatmp + linea + saltoli;
+                lineatmp = lineatmp + linea;
                 ///System.out.println(linea);
 
             }
@@ -231,10 +229,69 @@ public class Catalogo {
         return productos;
     }
 
+    public String[] login() {
+
+        File archivo = null;
+        FileReader fr = null;
+        BufferedReader br = null;
+        String[] usuario = null;
+        FileWriter fichero = null;
+        PrintWriter pw = null;
+        String CodProducto = "";
+        String Cantidad = "";
+        
+
+        try {
+           
+            usuario = new String[8];
+            
+            String path = System.getProperty("user.dir"); // ruta relativa
+            
+            path = path + "\\archivo\\archivo.txt";
+            
+            System.out.println("path :" + path);
+            archivo = new File(path);
+            
+            fr = new FileReader(archivo);
+            
+            br = new BufferedReader(fr);
+            String linea;
+            
+            String lineatmp = "";
+            
+            int i = 0;
+            
+            while ((linea = br.readLine()) != null) {
+                lineatmp = lineatmp + linea;
+
+            }
+            
+            usuario = lineatmp.split(",");
+            
+            System.out.println(Arrays.asList(usuario));
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+
+            try {
+                if (null != fr) {
+                    fr.close();
+                }
+            } catch (Exception e2) {
+                e2.printStackTrace();
+            }
+
+        }
+        return usuario;
+
+    }
+
     public static void main(String[] args) {
         Catalogo pv = new Catalogo();
         ///pv.Inicializar();
-        pv.Catalogo();
+        ///pv.Catalogo();
+        pv.Productos();
 
     }
 

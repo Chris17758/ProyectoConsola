@@ -24,7 +24,6 @@ public class Login {
             
             Main main = new Main();
         
-            main.Menu();
             
             
         } else{
